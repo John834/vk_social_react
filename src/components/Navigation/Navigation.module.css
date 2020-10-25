@@ -1,0 +1,30 @@
+.Navigation {
+  grid-area: n;
+  background: #edeef0;
+  width: 148px;
+  margin-left: 136px;
+  border: 1px solid black;
+  margin-top: 14px;
+  margin-right: 20px;
+}
+
+.Navigation ul {
+  margin: 0;
+}
+
+.Navigation li {
+  list-style-type: none;
+  color: rgb(42, 88, 133) ;
+  font-size: 12.5px;
+}
+
+.link {
+  text-decoration: none;
+  color: #2a5885;
+}
+
+.link:hover{
+  cursor:pointer;
+  background: #dce1e6;
+}
+

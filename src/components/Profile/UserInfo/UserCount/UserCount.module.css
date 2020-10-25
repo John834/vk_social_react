@@ -1,0 +1,31 @@
+.user__counts {
+  border-top: 1px solid #e7e8ec;
+  display: flex;
+  justify-content: center;
+}
+
+.counts {
+  padding: 16px;
+}
+
+.counts:hover {
+  cursor: pointer;
+}
+
+.count {
+  color: #2a5885;
+  font-size: 19px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.label {
+  color: #828282;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.label:hover {
+  color: #2a5886;
+}
