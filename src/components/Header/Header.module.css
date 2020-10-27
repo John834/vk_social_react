@@ -3,5 +3,6 @@
   background: #4a76a8;
   position: sticky;
   top: 0;
-  width: 1128px;
+  width: 1264px;
+  z-index: 1;
 }

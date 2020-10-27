@@ -16,7 +16,7 @@ const Profile = (props) => {
       <div className={pr.column}>
         <UserInfo data={props.data} name="Ghloe" surname="Moretz" />
         <MyPhoto imgData={props.imgData} />
-        <MyPost addPost={props.addPost} newPostText={props.data.newPostText} updatePost={props.updatePost} />
+        <MyPost dispatch={props.dispatch} newPostText={props.data.newPostText} />
         <PostContent contData={props.contData} />
       </div>
     </div>

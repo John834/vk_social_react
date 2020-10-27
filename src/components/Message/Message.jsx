@@ -2,9 +2,9 @@ import React from 'react';
 import me from './Message.module.css';
 import { NavLink } from 'react-router-dom';
 
-
 const UserDialog = (props) => {
-  let path = '/Message/' + props.id
+  //let path = '/Message/' + 'News'
+  let path = 'News'
   return (
     <NavLink to={path}>
       <li className={me.dialog}>
@@ -18,14 +18,6 @@ const UserDialog = (props) => {
     </NavLink>
   )
 }
-
-/* const Dia = () => {
-  return (
-    <div className={me.dialoggg}>
-      jkhjk
-    </div>
-  )
-} */
 
 const Message = (props) => {
   let messageItems = props.messData.messageData.map((mess, index) => <UserDialog name={mess.name} surname={mess.surname} id={mess.id} key={`${mess}_${index}`} /> )

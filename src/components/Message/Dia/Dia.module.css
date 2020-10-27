@@ -1,0 +1,119 @@
+.dialogsUsers {
+	width: 550px;
+	margin-top: 16px;
+	min-height: 560px;
+	background: #ffffff;
+    box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+    border-radius: 4px;
+    position: relative;
+}
+
+.dialogTop {
+	height: 48px;
+	border-bottom: 1px solid #e7e8ec;
+	position: sticky;
+	top: 38px;
+	width: 550px;
+	border-top: 1px solid #e7e8ec;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ffffff;
+}
+
+.dialogBottom {
+	height: 68px;
+	border-top: 1px solid #e7e8ec;
+	padding: 12px 26px 0 26px;
+	display: flex;
+	align-items: center;
+}
+
+.addDialog {
+	padding: 10px 12px;
+	width: 404px;
+	border: 1px solid #d3d9de;
+	outline: 0;
+	border-radius: 4px;
+	margin-right: 16px;
+	resize: none;
+}
+
+
+.addDialog:focus {
+	border: 1px solid #4a4c4e;
+}
+
+
+
+
+
+
+.dialogbtn {
+	outline: 0;
+	border: 0;
+	border: 1px solid #d3d9de;
+	padding: 10px 12px;
+	background: transparent;
+	border-radius: 4px;
+	height: 36px;
+	transition: 0.4s border ease;
+}
+
+.dialogbtn:active {
+	border: 1px solid;
+}
+
+
+
+.sendwrapper {
+	margin: 10px 0 0 14px;
+}
+
+
+.dialogCenter {
+	/*position: relative;*/
+	min-height: 422px;
+	/*top: 32px;*/
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+
+
+
+.send {
+    min-width: 20px;
+    max-width: 488px;
+    margin-left: 12px;
+    /*padding: 6px;*/
+    padding: 6px 12px 6px 12px;
+    box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+    background: #9eb8c7;
+    display: flex;
+    /*justify-content: flex-end;*/
+    word-break: break-all;
+    margin-bottom: 10px;
+    border-radius: 0 6px 6px 6px;
+    min-height: 24px;
+}
+
+
+
+.nameUser {
+	color: #2a5885;
+	font-weight: 700;
+	font-size: 16px;
+	font-family: fantasy;
+	margin-left: 12px;
+}
+
+.sendtime {
+	font-size: 12px;
+	margin-left: 4px;
+	color: #777e8c;
+}
+
+.infoUser {
+	margin-bottom: 4px;
+}
