@@ -1,0 +1,61 @@
+.users {
+	width: 550px;
+  	height: auto;
+  	background: #ffffff;
+  	box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+  	border-radius: 4px;
+  	margin-top: 14px;
+}
+
+
+.friendList {
+	padding: 0 20px;
+	border-top: 1px solid #e7e8ec;
+    margin: 40px 0 0 0;
+}
+
+.user {
+	display: flex;
+	padding: 24px 0;
+	justify-content: space-between;
+	border-bottom: 1px solid #e7e8ec;
+}
+
+.photo {
+	margin: 0 14px 0 0;
+}
+
+.photo img {
+	width: 88px;
+	height: 88px;
+	border-radius: 100%;
+}
+
+.userfullName {
+	color: #2a5885;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 16px;
+	margin-bottom: 8px;
+}
+
+.status {
+	margin-bottom: 8px;
+	color: #656565;
+	font-size: 12px;
+}
+
+.message {
+	color: #2a5885;
+	font-size: 12px;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.menu {
+	margin: 6px 2px 0 0;  
+}

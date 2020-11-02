@@ -35,3 +35,36 @@
   border-radius: 4px;
   outline: 0;
 }
+
+
+
+
+
+
+
+
+
+
+.postitem {
+  min-height: 20px;
+  box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+    border-radius: 4px;
+    background: #ffffff;
+    margin-top: 16px;
+}
+
+.postuser {
+  padding: 14px 20px 0 20px;
+}
+
+.postinfo {
+  padding: 8px 20px 20px 20px;
+}
+
+.likewrap {
+  padding: 0 20px;
+}
+
+.likecount {
+  padding: 14px 0;
+}

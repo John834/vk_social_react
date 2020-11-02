@@ -1,7 +1,7 @@
 import React from 'react';
 import dia from './Dia.module.css';
 import { NavLink } from 'react-router-dom';
-import { addNewMessage, updateAddNewMessage } from './../../../Redux/state';
+//import { addNewMessage, updateAddNewMessage } from './../../../Redux/message-reducer';
 
 const SendMessageUser = (props) => {
 	return (
@@ -15,20 +15,18 @@ const SendMessageUser = (props) => {
 }
 
 const Dia = (props) => {
-	let sendMessageItem = props.postmessage.sendMessageUserData.map((u, i) => <SendMessageUser name={u.nameUser} date={u.sendtime} message={u.messuser} /> )
+	let sendMessageItem = props.mess.map((u, i) => <SendMessageUser name={u.nameUser} date={u.sendtime} message={u.messuser} key={`${u}_${i}`} /> )
 
 	let newMessage = React.createRef()
-	let addMessage = () => {
-		props.dispatch(addNewMessage())
+	let onAddMessage = () => {
+		props.addMessage()
 	}
-
 	let onMessageChange = () => {
+		//let text = e.target.value
 		let text = newMessage.current.value;
-		console.log(props.dispatch(updateAddNewMessage(text)))
+		props.updateAddNewMessage(text)
 	}
-
-
-
+	
 	return (	
 		<div className={dia.dialogsUsers}>
 			<div className={dia.dialogTop}>
@@ -40,8 +38,8 @@ const Dia = (props) => {
 				</div>
 			</div>
 			<div className={dia.dialogBottom}>
-				<textarea onChange={ onMessageChange } ref={newMessage} className={dia.addDialog} value={props.postmessage.newSendMess} placeholder="Write a message…"></textarea>
-				<button onClick={ addMessage } className={dia.dialogbtn}>Add</button>
+				<textarea onChange={ onMessageChange } ref={newMessage} className={dia.addDialog} value={props.mess.newSendMess} placeholder="Write a message…"></textarea>
+				<button onClick={ onAddMessage } className={dia.dialogbtn}>Add</button>
 			</div>
 		</div>
 	)

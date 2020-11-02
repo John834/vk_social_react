@@ -8,7 +8,7 @@ const Photo = (props) => {
 }
 
 const MyPhoto = (props) => {
-  let images = props.imgData.imageData.map((img, id) => <Photo src={img.src} alt={img.alt} key={`${img}_${id}`}/>)
+  let images = props.imgData.map((img, id) => <Photo src={img.src} alt={img.alt} key={`${img}_${id}`}/>)
   return (
     <div className={my.myphoto}>
       <div className={my.photo__title}>

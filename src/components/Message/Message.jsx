@@ -20,7 +20,7 @@ const UserDialog = (props) => {
 }
 
 const Message = (props) => {
-  let messageItems = props.messData.messageData.map((mess, index) => <UserDialog name={mess.name} surname={mess.surname} id={mess.id} key={`${mess}_${index}`} /> )
+  let messageItems = props.store.messageData.map((mess, index) => <UserDialog name={mess.name} surname={mess.surname} id={mess.id} key={`${mess}_${index}`} /> )
   return (
     <div className={me.message}>
       <div className={me.dialogs}>

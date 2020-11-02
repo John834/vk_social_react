@@ -1,11 +1,12 @@
 import React from 'react';
 import ne from './News.module.css';
-import Dia from './../Message/Dia/Dia.jsx';
+import DiaContainer from './../Message/Dia/DiaContainer';
 
 const News = (props) => {
+	
 	return (
 		<div className={ne.news}>
-			<Dia postmessage={props.postmessage} dispatch={props.dispatch} />
+			<DiaContainer />
 		</div>
 	)
 } 

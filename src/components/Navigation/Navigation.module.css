@@ -3,24 +3,29 @@
   background: #edeef0;
   width: 148px;
   margin-left: 136px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   margin-top: 14px;
   margin-right: 20px;
+  height: 200px
 }
 
 .Navigation ul {
   margin: 0;
+  padding: 0 0 0 20px;
 }
 
 .Navigation li {
   list-style-type: none;
   color: rgb(42, 88, 133) ;
   font-size: 12.5px;
+  display: flex;
+  align-items: center;
 }
 
 .link {
   text-decoration: none;
   color: #2a5885;
+  padding: 13px 0 4px 6px;
 }
 
 .link:hover{

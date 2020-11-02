@@ -11,7 +11,7 @@ const Count = (props) => {
 }
 
 const UserCount = (props) => {
-  let counts = props.data.countData.map((c, index) => <Count count={c.count} label={c.label} key={`${c}_${index}`} />)
+  let counts = props.data.map((c, index) => <Count count={c.count} label={c.label} key={`${c}_${index}`} />)
 
   return (
     <div className={uc.user__counts}>

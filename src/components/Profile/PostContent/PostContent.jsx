@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import pc from './PostContent.module.css';
 
 
@@ -18,7 +18,7 @@ const PostsCount = (props) => {
 
 const PostContent = (props) => {
 	
-	let postItems = props.contData.postsData.map((post,index) => <PostsCount name={post.name} surname={post.surname} info={post.info} like={post.like} key={`${post}_${index}`} />)
+	let postItems = props.contData.map((post,index) => <PostsCount name={post.name} surname={post.surname} info={post.info} like={post.like} key={`${post}_${index}`} />)
 	return (
 		<div className={pc.content}>
 			{ postItems }
@@ -26,4 +26,4 @@ const PostContent = (props) => {
 	)
 }
 
-export default PostContent;
+export default PostContent; */
