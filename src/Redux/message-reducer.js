@@ -64,7 +64,7 @@ const messageReducer = (state = initialState, action) => {
 
 // mess 
 
-export const addNewMessage = () => ({type: ADD_MESSAGE})
+export const addMessage = () => ({type: ADD_MESSAGE})
 
 export const updateAddNewMessage = (text) => ({
   type: SEND_NEW_MESSAGE,

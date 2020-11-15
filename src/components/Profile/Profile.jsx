@@ -8,11 +8,16 @@ import MyPhoto from './MyPhoto/MyPhoto';
 // import PostContent from './PostContent/PostContent';
 import MyPostContainer from './MyPost/MyPostContainer';
 
+import Preloader from '../common/preloader/preloader.jsx'
+
 
 const Profile = (props) => {
+  if(!props.profile) {
+    return <Preloader />
+  }
   return (
     <div className={pr.profile}>
-      <User />
+      <User profile={props.profile} />
       <div className={pr.column}>
         <UserInfo data={props.store.countData} name="Ghloe" surname="Moretz" />
         <MyPhoto imgData={props.store.imageData} />

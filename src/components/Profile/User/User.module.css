@@ -37,3 +37,21 @@
   text-align: center;
   background: #e5ebf1;
 }
+
+.friend {
+  box-shadow: 0 1px 0 0 rgb(211 217 222 / 1), 0 0 0 1px rgb(231 232 236);
+  border-radius: 4px;
+  height: 140px;
+  background: #ffffff;
+  margin-top: 16px;
+}
+
+.friend img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.name {
+  padding: 0 12px;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { addNewMessage, updateAddNewMessage } from './../../../Redux/message-reducer';
+import { addMessage, updateAddNewMessage } from './../../../Redux/message-reducer';
 import Dia from './Dia'
 
 import { connect } from 'react-redux';
@@ -37,7 +37,7 @@ let mapStateToProps = (state) => {
 	}
 }
 
-let mapDispatchToProps = (dispatch) => {
+/*let mapDispatchToProps = (dispatch) => {
 	return {
 		updateAddNewMessage: (text) => {
 			dispatch(updateAddNewMessage(text))
@@ -46,9 +46,12 @@ let mapDispatchToProps = (dispatch) => {
 			dispatch(addNewMessage())
 		}
 	}
-}
+} */
 
-const DiaContainer = connect(mapStateToProps, mapDispatchToProps)(Dia)
+const DiaContainer = connect(mapStateToProps, {
+		updateAddNewMessage,
+		addMessage,
+	})(Dia)
 
 
 

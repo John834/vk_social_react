@@ -29,6 +29,10 @@
 	width: 88px;
 	height: 88px;
 	border-radius: 100%;
+	width: 114px;
+    height: 114px;
+    border-radius: 22%;
+	box-shadow: 0px 0px 14px -6px midnightblue;
 }
 
 .userfullName {
@@ -58,4 +62,24 @@
 
 .menu {
 	margin: 6px 2px 0 0;  
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pa {
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	padding: 14px;
+	border-radius: 20px;
+	margin: 0 4px;
+}
+
+.select {
+    border: 4px solid #4580003b;
+    padding: 14px;
+	border-radius: 20px;
+	margin: 0 4px;
 }

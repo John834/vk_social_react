@@ -5,4 +5,15 @@
   top: 0;
   width: 1264px;
   z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.loginBlock {
+	padding-right: 20px;
+}
+
+.loginBlock a {
+	color: springgreen;
 }
