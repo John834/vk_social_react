@@ -1,6 +1,7 @@
 import React from 'react';
 import dia from './Dia.module.css';
 import { NavLink } from 'react-router-dom';
+
 //import { addNewMessage, updateAddNewMessage } from './../../../Redux/message-reducer';
 
 const SendMessageUser = (props) => {
@@ -13,6 +14,8 @@ const SendMessageUser = (props) => {
 		
 	)
 }
+
+
 
 const Dia = (props) => {
 	let sendMessageItem = props.mess.map((u, i) => <SendMessageUser name={u.nameUser} date={u.sendtime} message={u.messuser} key={`${u}_${i}`} /> )
@@ -27,6 +30,10 @@ const Dia = (props) => {
 		props.updateAddNewMessage(text)
 	}
 	
+	
+
+
+
 	return (	
 		<div className={dia.dialogsUsers}>
 			<div className={dia.dialogTop}>

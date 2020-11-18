@@ -1,7 +1,7 @@
 import React from 'react';
 import nav from './Navigation.module.css';
 import { NavLink } from 'react-router-dom';
-import { HomeSvg, News, Message, Frineds } from './../../iconComponent/home.jsx';
+import { HomeSvg, News, Message, Frineds, Home } from './../../iconComponent/home.jsx';
 
 const Navigation = () =>{
   return (

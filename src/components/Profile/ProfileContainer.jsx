@@ -1,10 +1,10 @@
 import React from 'react';
+import { compose } from 'redux'
 import Profile from './Profile'
-import * as axios from 'axios';
 import { connect } from 'react-redux';
-import { setUserProfile } from './../../Redux/profile-reducer.js'
 import { withRouter } from "react-router";
-import { userIdAPI } from './../api/api.js';
+import { getUserProfile } from '../../Redux/profile-reducer.js';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect.js';
 
 class ProfileContainer extends React.Component {
 	componentDidMount() {
@@ -12,33 +12,43 @@ class ProfileContainer extends React.Component {
 		if(!userId) {
 			userId = 2
 		}
-		userIdAPI.getUserId(userId)
-			.then(data => {
-				this.props.setUserProfile(data)
-		})
+		this.props.getUserProfile(userId)
 	}
+
 	render() {
+
 		return (
-	    <Profile {...this.props} profile={this.props.profile} />
-  	)
+	    	<Profile {...this.props} profile={this.props.profile} />
+  		)
 	}
 }
+
 
 let mapStateToProps = (state) => {
 	return {
-		profile: state.profile.profile
+		profile: state.profile.profile,
 	}
 }
 
 
 
-let withUrlDataContainerComponent = withRouter(ProfileContainer)
 
-export default connect(mapStateToProps, { setUserProfile })(withUrlDataContainerComponent);
+			// compose
 
+/*   
 
+let withUrlDataContainerComponent = withRouter(authRedirectComponent)
+
+export default connect(mapStateToProps, {getUserProfile})(withUrlDataContainerComponent);
+
+*/
 
 //<PostContent contData={props.store.postsData} />
 /*
 contenteditable="true" */
 
+export default compose(
+	connect(mapStateToProps, {getUserProfile}),
+	withRouter,
+	withAuthRedirect
+)(ProfileContainer)

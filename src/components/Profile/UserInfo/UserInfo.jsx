@@ -1,5 +1,6 @@
 import React from 'react';
 import UserCount from './UserCount/UserCount';
+import ProfileStatus from './ProfileStatus.jsx';
 
 import us from './UserInfo.module.css';
 
@@ -12,7 +13,7 @@ const UserInfo = (props) => {
             <h1 className={us.profile__name}>{props.name} {props.surname}</h1>
             <span className={us.profile__online}>Online</span>
             </div>
-          <div className={us.profile__status}><span>set a status message</span></div>
+          <ProfileStatus status="set a status message" />
         </div>
         <div className={us.info}>
           <div className={us.info__wrapper}>

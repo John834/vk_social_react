@@ -1,8 +1,9 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import profileReducer from './profile-reducer';
 import messageReducer from './message-reducer';
 import friendReducer from './friend-reducer';
 import authReducer from './auth-reducer';
+import thunkMiddleware from 'redux-thunk'
 
 
 let reducers = combineReducers({
@@ -14,7 +15,7 @@ let reducers = combineReducers({
 
 // восприменять как стейт
 
-let store = createStore(reducers)
+let store = createStore(reducers, applyMiddleware(thunkMiddleware))
 
 window.store = store
 

@@ -63,3 +63,12 @@
   color: #2a5885;
   font-size: 13px;
 }
+
+.inputStatus input {
+  font-size: 12px;
+  color: black;
+  padding: 4px 6px 4px 0px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #65bbe8;
+}

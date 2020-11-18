@@ -1,8 +1,11 @@
 import React from 'react';
 import { addMessage, updateAddNewMessage } from './../../../Redux/message-reducer';
-import Dia from './Dia'
+import Dia from './Dia';
+import { compose } from 'redux'
 
 import { connect } from 'react-redux';
+
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect.js'
 
 //const DiaContainer = (props) => {
 	/*let state = props.store.getState().message
@@ -33,7 +36,7 @@ import { connect } from 'react-redux';
 
 let mapStateToProps = (state) => {
 	return {
-		mess: state.message.sendMessageUserData
+		mess: state.message.sendMessageUserData,
 	}
 }
 
@@ -48,6 +51,24 @@ let mapStateToProps = (state) => {
 	}
 } */
 
+// const profileRedirectComponent = withAuthRedirect(Dia)
+// hoc
+
+
+
+
+
+
+// compose
+
+/*
+compose(
+	withAuthRedirect
+)(Dia)
+
+// функция compose авто возметь Dia
+// и закинет вызов withAuthRedirect
+
 const DiaContainer = connect(mapStateToProps, {
 		updateAddNewMessage,
 		addMessage,
@@ -56,3 +77,11 @@ const DiaContainer = connect(mapStateToProps, {
 
 
 export default DiaContainer;
+
+*/
+
+
+export default compose(
+	connect(mapStateToProps, { updateAddNewMessage, addMessage }),
+	withAuthRedirect
+)(Dia)
