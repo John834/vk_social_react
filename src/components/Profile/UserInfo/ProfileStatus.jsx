@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 import us from './UserInfo.module.css';
 
 class ProfileStatus extends Component {
+  statusInputRef = React.createRef()
+
   state = {
-    editMode: false
+    editMode: false,
+    status: this.props.status
   }
+
+/*
+  componentDidMount() {
+    axios.get('https://social-network.samuraijs.com/api/1.0/status',)
+  }
+*/
 
   activatedEditMode = () => {
     this.setState({
@@ -15,8 +25,16 @@ class ProfileStatus extends Component {
 
   deactivatedEditMode = () => {
     this.setState( {
-      editMode:false
+      editMode: false,
     })
+    this.props.updateStatus(this.state.status)
+  }
+
+  onStatusChange = (e) => {
+    this.setState({
+      status: e.currentTarget.value
+    })
+    
   }
 
   render() {
@@ -25,14 +43,20 @@ class ProfileStatus extends Component {
 
           {!this.state.editMode &&
             <div className={us.profile__status}><span onDoubleClick={this.activatedEditMode}>
-              {this.props.status}
+              {this.props.status || 'Status'}
             </span></div>
           }
 
 
           {this.state.editMode &&
             <div className={us.inputStatus}>
-              <input autoFocus={true} onBlur={this.deactivatedEditMode} placeholder={this.props.status} />
+              <input 
+                onChange={this.onStatusChange}
+                autoFocus={true} 
+                onBlur={this.deactivatedEditMode} 
+                value={this.state.status}
+                // placeholder={this.state.status} 
+              />
             </div>
           }
 

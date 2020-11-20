@@ -13,7 +13,7 @@ const UserInfo = (props) => {
             <h1 className={us.profile__name}>{props.name} {props.surname}</h1>
             <span className={us.profile__online}>Online</span>
             </div>
-          <ProfileStatus status="set a status message" />
+          <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
         </div>
         <div className={us.info}>
           <div className={us.info__wrapper}>
