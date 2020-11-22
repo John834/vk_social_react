@@ -21,7 +21,7 @@
 	background: #ffffff;
 }
 
-.dialogBottom {
+.dialogBottom > form {
 	height: 68px;
 	border-top: 1px solid #e7e8ec;
 	padding: 12px 26px 0 26px;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { addMessage, updateAddNewMessage } from './../../../Redux/message-reducer';
+import { addMessage /* updateAddNewMessage */ } from './../../../Redux/message-reducer';
 import Dia from './Dia';
 import { compose } from 'redux'
 
@@ -82,6 +82,6 @@ export default DiaContainer;
 
 
 export default compose(
-	connect(mapStateToProps, { updateAddNewMessage, addMessage }),
+	connect(mapStateToProps, { /* updateAddNewMessage, */ addMessage }),
 	withAuthRedirect
 )(Dia)

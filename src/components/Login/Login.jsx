@@ -72,7 +72,6 @@ const Login = (props) => {
 	const onSubmit = (formData) => {
 		console.log(formData)
 	}
-	debugger
 	return (
 		<div>
 			<h1>Login</h1>

@@ -12,13 +12,13 @@ import store from './Redux/redux-store'
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Router>
     	<Provider store={store}>
     		<App  store={store.getState()} />
     	</Provider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
+  //</React.StrictMode>,
   document.getElementById('root')
 )
 

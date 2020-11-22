@@ -1,5 +1,6 @@
 const ADD_MESSAGE = "ADD-MESSAGE"
-const SEND_NEW_MESSAGE = 'SEND-NEW-MESSAGE'
+
+/*const SEND_NEW_MESSAGE = 'SEND-NEW-MESSAGE'*/
 
 
 let initialState = {
@@ -12,7 +13,7 @@ let initialState = {
 	sendMessageUserData: [
 		{nameUser: "Ghloe", sendtime: "12:59 pm", messuser: "I was approved for the lead role the film"}
 	],
-	newSendMess: ''
+	/*newSendMess: ''*/
 }
 
 const messageReducer = (state = initialState, action) => {
@@ -25,21 +26,25 @@ const messageReducer = (state = initialState, action) => {
 			let newMess = {
 		        nameUser: "Ghloe",
 		        sendtime: "12:59 pm",
-		        messuser: state.newSendMess
-	      	}
+		        messuser: action.newMessageBody
+	      	}	
 			return {
 				...state,
-				newSendMess: '',
+				/*newSendMess: '',*/
 				sendMessageUserData: [...state.sendMessageUserData, newMess]
 			}
 	        /*stateCopy.sendMessageUserData.push(newMess)
 	       	stateCopy.newSendMess = ''*/
 	    	//return stateCopy
-	    case SEND_NEW_MESSAGE:
+
+	    // Dia
+	    /*case SEND_NEW_MESSAGE:
 	    	return {
 				...state,
 				newSendMess: action.newText
-			}
+			}*/
+
+
 	    	/*stateCopy.newSendMess = action.newText*/
 	   		//return stateCopy
 	   	default: 
@@ -64,12 +69,15 @@ const messageReducer = (state = initialState, action) => {
 
 // mess 
 
-export const addMessage = () => ({type: ADD_MESSAGE})
+export const addMessage = (newMessageBody) => ({
+	type: ADD_MESSAGE,
+ 	newMessageBody
+ })
 
-export const updateAddNewMessage = (text) => ({
+/*export const updateAddNewMessage = (text) => ({
   type: SEND_NEW_MESSAGE,
   newText: text
-})
+})*/
 
 export default messageReducer;
 
