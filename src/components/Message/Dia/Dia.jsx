@@ -2,8 +2,13 @@ import React from 'react';
 import dia from './Dia.module.css';
 import { NavLink } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
+import { Textarea } from '../../common/DialogForm/DialogForm.jsx';
+import { required, maxLengthCreator } from '../../utils/validators/validators.js';
+
 
 //import { addNewMessage, updateAddNewMessage } from './../../../Redux/message-reducer';
+
+let maxLength200 = maxLengthCreator(200)
 
 const SendMessageUser = (props) => {
 	return (
@@ -71,12 +76,13 @@ const addMessageForm = props => {
 		<form onSubmit={handleSubmit} >
 			<Field 
 				name="newMessageBody"
-				component="textarea"
+				component={Textarea}
 				// onChange={ onMessageChange } 
 				// ref={newMessage} 
 				// value={props.mess.newSendMess} 
 				className={dia.addDialog} 
-				placeholder="Write a message…" 
+				placeholder="Write a message…"
+				validate={[required, maxLength200 ]}
 			/>
 			<button /*onClick={ onAddMessage } */ className={dia.dialogbtn}>Add</button>
 		</form>

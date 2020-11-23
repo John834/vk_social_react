@@ -2,8 +2,10 @@ import React from 'react';
 import myp from './MyPost.module.css';
 // import { addPostActionCreator, updateNewPostText} from './../../../Redux/profile-reducer';
 import { Field, reduxForm } from 'redux-form';
+import { required, maxLengthCreator } from '../../utils/validators/validators.js';
+import { Input } from '../../common/FormsControls/FormsControls.jsx';
 
-
+let maxLength10 = maxLengthCreator(10)
 
 const PostsCount = (props) => {
   return (
@@ -73,13 +75,15 @@ const MyPost = (props) => {
 const ProfileForm = (props) => {
   const {handleSubmit} = props
   return (
-       <form onSubmit={handleSubmit} >
+       <form onSubmit={handleSubmit} className={myp.form} >
           <Field 
+            className={myp.input}
             name="addNewPost"
-            component="input"
+            component={Input}
             type="text" 
             placeholder="What's new?" 
-            // onChange={ onPostChange } 
+            validate={[required, maxLength10]}
+            // onChange={ onPostChange} 
             // ref={newPostsElement} 
             // value={props.postMess} 
           />

@@ -1,0 +1,11 @@
+.formComtrols > input {
+	border: 2px solid #bf2948;
+}
+
+.error {
+	color: red;
+}
+
+.formComtrols span {
+	color: red;
+}

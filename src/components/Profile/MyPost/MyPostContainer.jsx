@@ -41,7 +41,6 @@ let mapStateToPropsPost = (state) => {
 }
 
 let mapDispatchToPropsPost = (dispatch) => {
-  debugger
   return {
     addPost: (addNewPost) => {
       dispatch(addPostActionCreator(addNewPost))

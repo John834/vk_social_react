@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+.form {
+  display: flex;
+}
+
+
+
 .post img {
   border-radius: 100%
 }
@@ -22,7 +28,6 @@
   margin-right: 20px;
   padding: 6px;
   outline: 0;
-  width: 74%;
 }
 
 .btn {
@@ -36,9 +41,13 @@
   outline: 0;
 }
 
+.form > div {
+  width: 100%;
+}
 
-
-
+.input {
+  width: 86%;
+}
 
 
 
