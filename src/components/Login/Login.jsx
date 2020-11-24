@@ -3,6 +3,9 @@ import lo from './Login.module.css';
 import { Field, reduxForm } from 'redux-form';
 import { Input } from '../common/FormsControls/FormsControls.jsx';
 import { required } from '../utils/validators/validators.js';
+import { connect } from 'react-redux'
+import { Loginn} from '../../Redux/auth-reducer.js';
+import { Redirect } from 'react-router-dom'
 
 const LoginForm = (props) => {
 	const {handleSubmit } = props
@@ -15,8 +18,7 @@ const LoginForm = (props) => {
 						name="firstName"
 						component={Input}
 						type="text"
-						placeholder="First Name"
-						validate={required}
+						placeholder="First Name"	
 					/>
 				</div>
 			</div>
@@ -27,27 +29,26 @@ const LoginForm = (props) => {
 						name="lastName"
 						component={Input}
 						type="text"
-						placeholder="Last Name"
-						validate={required}
+						placeholder="Last Name"						
 					/>
 				</div>
 			</div>
 			<div>
 				<label>
-					<Field name="sex" component={Input} type="radio" value="male" validate={required} />{' '}
+					<Field name="sex" component={Input} type="radio" value="male"  />{' '}
 					Male
 				</label>
 				<label>
-					<Field name="sex" component={Input} type="radio" value="female" validate={required} />{' '}
+					<Field name="sex" component={Input} type="radio" value="female"  />{' '}
 					Female
 				</label>
 				<label>
-					<Field name="sex" component={Input} type="radio" value="other" validate={required} />{' '}
+					<Field name="sex" component={Input} type="radio" value="other"  />{' '}
 					Other
 				</label>
 			</div>
 			<div>
-				<Field placeholder={"login"} name={"login"} component={Input} validate={required} />
+				<Field placeholder={"email"} name={"email"} component={Input} validate={required} />
 			</div>
 			<div>
 				<Field placeholder={"Password"} name={"password"} component={Input}  validate={required}/>
@@ -73,8 +74,13 @@ const LoginReduxForm = reduxForm({
 const Login = (props) => {
 
 	const onSubmit = (formData) => {
-		console.log(formData)
+		props.Loginn(formData.email, formData.password, formData.rememberMe)
 	}
+
+	if(props.isAuth) {
+		return <Redirect to={"/profile"} />
+	}
+
 	return (
 		<div>
 			<h1>Login</h1>
@@ -83,4 +89,20 @@ const Login = (props) => {
 	)
 }
 
-export default Login;
+
+const mapStateToProps = state => ({
+	isAuth: state.auth.isAuth
+})
+
+
+export default connect(null, {Loginn})(Login);
+
+// login 
+// является thunk creator 
+// export default connect(null, {Loginn})(Login);
+// props.Loginn вызывается другая функия коллбэк 
+// которая внутри себя dispatch вызов этого
+// export default connect(null, {Loginn})(Login);
+// функция принимает те параметры 
+// потом dispatch в thunkcreator
+// передаются те же параметры 
