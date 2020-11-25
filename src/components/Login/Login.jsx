@@ -53,6 +53,7 @@ const LoginForm = (props) => {
 			<div>
 				<Field placeholder={"Password"} name={"password"} component={Input}  validate={required}/>
 			</div>
+			<div className={lo.defense}>{!props.error ? '' : props.error}</div>
 			<div>
 				<Field type={"checkbox"} name={"rememberme"} component={Input}  validate={required} /> remember me
 			</div>
@@ -78,7 +79,7 @@ const Login = (props) => {
 	}
 
 	if(props.isAuth) {
-		return <Redirect to={"/profile"} />
+		return <Redirect to={"/Profile"} />
 	}
 
 	return (
@@ -95,7 +96,7 @@ const mapStateToProps = state => ({
 })
 
 
-export default connect(null, {Loginn})(Login);
+export default connect(mapStateToProps, {Loginn})(Login);
 
 // login 
 // является thunk creator 

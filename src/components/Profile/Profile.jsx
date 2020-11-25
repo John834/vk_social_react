@@ -19,7 +19,13 @@ const Profile = (props) => {
     <div className={pr.profile}>
       <User profile={props.profile} />
       <div className={pr.column}>
-        <UserInfo data={props.store.countData} name="Ghloe" surname="Moretz" status={props.status} updateStatus={props.updateStatus} />
+        <UserInfo 
+          data={props.store.countData} 
+          name="Ghloe" 
+          surname="Moretz" 
+          status={props.status} 
+          updateStatus={props.updateStatus} 
+        />
         <MyPhoto imgData={props.store.imageData} />
         <MyPostContainer />
       </div>
