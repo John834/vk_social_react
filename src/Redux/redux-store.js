@@ -3,7 +3,9 @@ import profileReducer from './profile-reducer';
 import messageReducer from './message-reducer';
 import friendReducer from './friend-reducer';
 import authReducer from './auth-reducer';
-import thunkMiddleware from 'redux-thunk'
+import thunkMiddleware from 'redux-thunk';
+import appReducer from './app-reducer';
+
 import { reducer as formReducer } from 'redux-form'
 
 
@@ -13,6 +15,7 @@ let reducers = combineReducers({
 	friendPage: friendReducer,
 	auth: authReducer,
 	form: formReducer,
+	app: appReducer,
 })
 
 // восприменять как стейт
